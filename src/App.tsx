@@ -9,8 +9,8 @@ export default function App() {
   const dispatch = useAppDispatch();
   const stateSelection = useAppSelector((state) => state.coffeeList.stateSelection);
   return (
-    <div className="bg-[#111315] min-h-screen  text-white pt-32 px-32 font-demisan">
-      <div className="bg-[#1B1D1F] flex flex-col justify-center items-center p-32 gap-4 rounded-3xl overflow-auto">
+    <div className="bg-[#111315] min-h-screen  text-white pt-6 px-2 md:pt-12 md:px-6  lg:pt-32 lg:px-32 font-demisan">
+      <div className="bg-[#1B1D1F] flex flex-col justify-center items-center p-6 md:p-12 lg:p-32 gap-4 rounded-3xl overflow-auto">
         <h1 className="text-3xl font-bold">Our Collection</h1>
         <p className="text-[#6F757C] max-w-[400px] text-center">
           Introducing our Coffee Collection, a selection of unique coffees from
