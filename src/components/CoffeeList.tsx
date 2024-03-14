@@ -1,12 +1,13 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 import { getCoffeeList } from "../store/CoffeeListSlice";
 import { CoffeeProduct } from "./CoffeeProduct";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
 
 export function CoffeeList() {
-  const dispatch = useDispatch();
-  const coffeeListRaw = useSelector((state) => state.coffeeList.coffeeList);
-  const isSelection = useSelector((state) => state.coffeeList.stateSelection);
+  const dispatch = useAppDispatch();
+  const coffeeListRaw = useAppSelector((state) => state.coffeeList.coffeeList);
+  const isSelection = useAppSelector((state) => state.coffeeList.stateSelection);
   useEffect(() => {
     dispatch(getCoffeeList());
   }, []);

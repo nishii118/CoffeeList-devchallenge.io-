@@ -1,12 +1,13 @@
 // import { Route, Routes } from "react-router-dom";
 import { SelectionButton } from "./components/SelectionButton";
 import { CoffeeList } from "./components/CoffeeList";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 import { CoffeeListActions } from "./store/CoffeeListSlice";
-
+import { useAppDispatch, useAppSelector } from "./store/hooks";
+// import { RootState } from "@reduxjs/toolkit/query";
 export default function App() {
-  const dispatch = useDispatch();
-  const stateSelection = useSelector((state) => state.coffeeList.stateSelection);
+  const dispatch = useAppDispatch();
+  const stateSelection = useAppSelector((state) => state.coffeeList.stateSelection);
   return (
     <div className="bg-[#111315] min-h-screen  text-white pt-32 px-32 font-demisan">
       <div className="bg-[#1B1D1F] flex flex-col justify-center items-center p-32 gap-4 rounded-3xl overflow-auto">

@@ -1,4 +1,4 @@
-import { faStar as faStarDuotone } from "@fortawesome/pro-duotone-svg-icons";
+// import { faStar as faStarDuotone } from "@fortawesome/pro-duotone-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 interface CoffeeProductProps {

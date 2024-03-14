@@ -1,6 +1,27 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+interface CoffeeProduct {
+  id: number;
+  name: string;
+  image: string;
+  price: string;
+  rating: number;
+  votes: number;
+  popular: boolean;
+  available: boolean
+}
+interface CoffeeListState {
+  coffeeList: CoffeeProduct[];
+  stateSelection: string;
+  status: string
+}
+
+const initialState: CoffeeListState = {
+  coffeeList: [],
+  stateSelection: "All",
+  status: "idle"
+}
 export const getCoffeeList = createAsyncThunk("getCoffeeList", async () => {
   try {
     const response = await axios.get(
@@ -14,13 +35,9 @@ export const getCoffeeList = createAsyncThunk("getCoffeeList", async () => {
 });
 const CoffeeListSlice = createSlice({
   name: "coffeeList",
-  initialState: {
-    coffeeList: [],
-    stateSelection: "All",
-    status: "idle"
-  },
+  initialState,
   reducers: {
-    chooseSelection: (state, action) => {
+    chooseSelection: (state, action: PayloadAction<string>) => {
       state.stateSelection = action.payload;
       
     },
